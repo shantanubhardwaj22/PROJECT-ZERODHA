@@ -7,9 +7,11 @@ function Signup() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
   const handleSignup = async () => {
     try {
-      await axios.post("http://localhost:3002/auth/signup", {
+      await axios.post(`${backendUrl}/auth/signup`, {
         name: email.split("@")[0], // simple name logic
         email,
         password,

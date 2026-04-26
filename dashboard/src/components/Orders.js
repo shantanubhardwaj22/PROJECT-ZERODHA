@@ -3,9 +3,11 @@ import axios from "axios";
 
 const Orders = () => {
   const [orders, setOrders] = useState([]);
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
   useEffect(() => {
-    axios.get("http://localhost:3002/orders")
+    axios
+      .get(`${backendUrl}/orders`)
       .then(res => setOrders(res.data))
       .catch(err => console.log(err));
   }, []);

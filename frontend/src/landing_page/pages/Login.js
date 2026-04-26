@@ -9,9 +9,12 @@ function Login() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
+  const dashboardUrl = process.env.REACT_APP_DASHBOARD_URL;
+
   const handleLogin = async () => {
     try {
-      const res = await axios.post("http://localhost:3002/auth/login", {
+      const res = await axios.post(`${backendUrl}/auth/login`, {
         email,
         password,
       });
@@ -20,7 +23,7 @@ function Login() {
       localStorage.setItem("token", res.data.token);
 
       // dashboard redirect
-     window.location.replace("http://localhost:3003");
+      window.location.replace(dashboardUrl);
 
     } catch (err) {
       setError(err.response?.data?.message || "Login failed");

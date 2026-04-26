@@ -6,11 +6,12 @@ import "./BuyActionWindow.css";
 const SellActionWindow = ({ uid }) => {
   const [stockQuantity, setStockQuantity] = useState(1);
   const [stockPrice, setStockPrice] = useState(0.0);
+  const backendUrl = process.env.REACT_APP_BACKEND_URL;
 
   const { closeSellWindow } = useContext(GeneralContext);
 
   const handleSellClick = async () => {
-    await axios.post("http://localhost:3002/newOrder", {
+    await axios.post(`${backendUrl}/newOrder`, {
       name: uid,
       qty: Number(stockQuantity),
       price: Number(stockPrice),
