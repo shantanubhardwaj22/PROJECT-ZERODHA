@@ -6,7 +6,13 @@ function Hero() {
 
       <div className="p-4" id="supportWrapper">
         <h4>Support Portal</h4>
-        <a href="">Track Tickets</a>
+        <button
+          type="button"
+          className="btn btn-link p-0"
+          style={{ textDecoration: "none" }}
+        >
+          Track Tickets
+        </button>
       </div>
 
      <div className="row p-5" >
@@ -16,19 +22,35 @@ function Hero() {
           </h1>
           <input className="mb-4" placeholder="Eg. how do I activate F&O" />
           <br />
-          <a href="">Track account opening</a>&nbsp;&nbsp;
-          <a href="">Track segment activation</a>&nbsp;&nbsp;
-          <a href="">Intraday margins</a><br></br>
-          <a href="">Kite user manual</a>&nbsp;&nbsp;
+          <button type="button" className="btn btn-link p-0" style={{ textDecoration: "none" }}>
+            Track account opening
+          </button>
+          &nbsp;&nbsp;
+          <button type="button" className="btn btn-link p-0" style={{ textDecoration: "none" }}>
+            Track segment activation
+          </button>
+          &nbsp;&nbsp;
+          <button type="button" className="btn btn-link p-0" style={{ textDecoration: "none" }}>
+            Intraday margins
+          </button>
+          <br></br>
+          <button type="button" className="btn btn-link p-0" style={{ textDecoration: "none" }}>
+            Kite user manual
+          </button>
+          &nbsp;&nbsp;
         </div>
         <div className="col-6 p-4">
           <h1 className="fs-3">Featured</h1>
           <ol>
             <li>
-              <a href="">Current Takeovers and Delisting - January 2024</a>
+              <button type="button" className="btn btn-link p-0" style={{ textDecoration: "none" }}>
+                Current Takeovers and Delisting - January 2024
+              </button>
             </li>
             <li>
-              <a href="">Latest Intraday leverages - MIS & CO</a>
+              <button type="button" className="btn btn-link p-0" style={{ textDecoration: "none" }}>
+                Latest Intraday leverages - MIS & CO
+              </button>
             </li>
           </ol>
         </div>
