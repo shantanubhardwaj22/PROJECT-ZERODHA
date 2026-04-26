@@ -1,19 +1,22 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const navigate = useNavigate();
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
-  const backendUrl = process.env.REACT_APP_BACKEND_URL;
+  const backendUrl =
+    process.env.REACT_APP_BACKEND_URL ||
+    "https://project-zerodha-1-46fz.onrender.com";
   const dashboardUrl = process.env.REACT_APP_DASHBOARD_URL;
 
   const handleLogin = async () => {
     try {
+      if (!backendUrl) {
+        setError("Backend URL is not configured.");
+        return;
+      }
       const res = await axios.post(`${backendUrl}/auth/login`, {
         email,
         password,
@@ -23,10 +26,10 @@ function Login() {
       localStorage.setItem("token", res.data.token);
 
       // dashboard redirect
-      window.location.replace(dashboardUrl);
+      if (dashboardUrl) window.location.replace(dashboardUrl);
 
     } catch (err) {
-      setError(err.response?.data?.message || "Login failed");
+      setError(err.response?.data?.message || err.message || "Login failed");
     }
   };
 

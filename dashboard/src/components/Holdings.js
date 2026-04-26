@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios, { all } from "axios";
+import axios from "axios";
 import { VerticalGraph } from "./VerticalGraph.js";
 
 // import { holdings } from "../data/data";
@@ -13,7 +13,7 @@ const Holdings = () => {
       // console.log(res.data);
       setAllHoldings(res.data);
     });
-  }, []);
+  }, [backendUrl]);
 
   // const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
   const labels = allHoldings.map((subArray) => subArray["name"]);

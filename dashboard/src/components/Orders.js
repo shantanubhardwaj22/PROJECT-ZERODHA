@@ -10,7 +10,7 @@ const Orders = () => {
       .get(`${backendUrl}/orders`)
       .then(res => setOrders(res.data))
       .catch(err => console.log(err));
-  }, []);
+  }, [backendUrl]);
 
   return (
     <div className="orders">

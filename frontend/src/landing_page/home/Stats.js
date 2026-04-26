@@ -30,7 +30,7 @@ function Stats() {
           </p>
         </div>
         <div className="col-6 p-5">
-          <img src="media/images/ecosystem.png" style={{ width: "90%" }} />
+          <img src="media/images/ecosystem.png" alt="" style={{ width: "90%" }} />
           <div className="text-center">
             <button
               type="button"

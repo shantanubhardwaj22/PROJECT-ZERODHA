@@ -1,5 +1,6 @@
 
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -7,50 +8,86 @@ function Footer() {
       <div className="container border-top mt-5">
         <div className="row mt-5">
           <div className="col">
-            <img src="media/images/logo.svg" style={{ width: "50%" }} />
+            <img
+              src="media/images/logo.svg"
+              alt="Zerodha"
+              style={{ width: "50%" }}
+            />
             <p>
               &copy; 2010 - 2024, Not Zerodha Broking Ltd. All rights reserved.
             </p>
           </div>
           <div className="col">
             <p>Company</p>
-            <a href="">About</a>
+            <Link to="/about" style={{ textDecoration: "none" }}>
+              About
+            </Link>
             <br />
-            <a href="">Products</a>
+            <Link to="/product" style={{ textDecoration: "none" }}>
+              Products
+            </Link>
             <br />
-            <a href="">Pricing</a>
+            <Link to="/pricing" style={{ textDecoration: "none" }}>
+              Pricing
+            </Link>
             <br />
-            <a href="">Referral programme</a>
+            <button type="button" className="btn btn-link p-0">
+              Referral programme
+            </button>
             <br />
-            <a href="">Careers</a>
+            <button type="button" className="btn btn-link p-0">
+              Careers
+            </button>
             <br />
-            <a href="">Zerodha.tech</a>
+            <button type="button" className="btn btn-link p-0">
+              Zerodha.tech
+            </button>
             <br />
-            <a href="">Press & media</a>
+            <button type="button" className="btn btn-link p-0">
+              Press & media
+            </button>
             <br />
-            <a href="">Zerodha cares (CSR)</a>
+            <button type="button" className="btn btn-link p-0">
+              Zerodha cares (CSR)
+            </button>
             <br />
           </div>
           <div className="col">
             <p>Support</p>
-            <a href="">Contact</a>
+            <button type="button" className="btn btn-link p-0">
+              Contact
+            </button>
             <br />
-            <a href="">Support portal</a>
+            <Link to="/support" style={{ textDecoration: "none" }}>
+              Support portal
+            </Link>
             <br />
-            <a href="">Z-Connect blog</a>
+            <button type="button" className="btn btn-link p-0">
+              Z-Connect blog
+            </button>
             <br />
-            <a href="">List of charges</a>
+            <button type="button" className="btn btn-link p-0">
+              List of charges
+            </button>
             <br />
-            <a href="">Downloads & resources</a>
+            <button type="button" className="btn btn-link p-0">
+              Downloads & resources
+            </button>
             <br />
           </div>
           <div className="col">
             <p>Account</p>
-            <a href="">Open an account</a>
+            <Link to="/signup" style={{ textDecoration: "none" }}>
+              Open an account
+            </Link>
             <br />
-            <a href="">Fund transfer</a>
+            <button type="button" className="btn btn-link p-0">
+              Fund transfer
+            </button>
             <br />
-            <a href="">60 day challenge</a>
+            <button type="button" className="btn btn-link p-0">
+              60 day challenge
+            </button>
             <br />
           </div>
         </div>

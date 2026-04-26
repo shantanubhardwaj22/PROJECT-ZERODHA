@@ -7,10 +7,16 @@ function Signup() {
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
 
-  const backendUrl = process.env.REACT_APP_BACKEND_URL;
+  const backendUrl =
+    process.env.REACT_APP_BACKEND_URL ||
+    "https://project-zerodha-1-46fz.onrender.com";
 
   const handleSignup = async () => {
     try {
+      if (!backendUrl) {
+        setError("Backend URL is not configured.");
+        return;
+      }
       await axios.post(`${backendUrl}/auth/signup`, {
         name: email.split("@")[0], // simple name logic
         email,
@@ -20,7 +26,7 @@ function Signup() {
       setSuccess("Signup successful! Please login.");
       setError("");
     } catch (err) {
-      setError(err.response?.data?.message || "Signup failed");
+      setError(err.response?.data?.message || err.message || "Signup failed");
       setSuccess("");
     }
   };

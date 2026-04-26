@@ -12,8 +12,6 @@ import SupportPage from "./landing_page/support/SupportPage";
 import NotFound from "./landing_page/NotFound";
 import Navbar from "./landing_page/Navbar";
 import Footer from "./landing_page/Footer";
-import Signup from "./landing_page/pages/Signup.js";
-import Login from "./landing_page/pages/Login.js";
 import Auth from "./landing_page/pages/Auth.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

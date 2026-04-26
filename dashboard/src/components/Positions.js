@@ -1,6 +1,6 @@
 import React from "react";
 
-import { watchlist, holdings, positions } from "../data/data";
+import { positions } from "../data/data";
 
 
 
